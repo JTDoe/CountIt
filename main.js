@@ -1,6 +1,7 @@
 'use strict';
 
 const assert = require('assert');
+const { elementAttributeModified } = require('jsdom/lib/jsdom/living/named-properties-window');
 const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
@@ -20,8 +21,12 @@ const countChar = (str) => {
       counts[s] = 1
     }
   }
-  return counts;
+  return counts
 }
+
+
+
+
 
 const newstr = "The quick brown fox jumps over the lazy dog and the sleeping cat early in the day.";
 console.log(countChar(newstr))
