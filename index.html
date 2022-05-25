@@ -2,15 +2,70 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="./styles.css">
     <title></title>
     <script src="main.js"></script>
   </head>
   <body>
-    <h1>Count It Checkpoint</h1>
-   <input></input>
-   <div id="countOut">
-     <button>Submit</button>
-  
-   </div>
-  </body>
+
+    <h1>Hello World!</h1>
+    <hr/>
+    <div class="container">
+      <header class="header">
+        <h1 class="header__title">Count It</h1>
+        <br>
+        <h2>Type a word</h2>
+      </header>
+   
+      <div class="text-input">
+        <textarea class="text-input__input" id="textInput" cols="30" rows="10"></textarea>
+    </div>
+
+      <div class="text-output" id="textOutput">
+      </div>
+
+      <div class = "button">
+        <button id="button">Count</button>
+      </div>
+    </div>
+
+  </div>
+    <div id="display-element"></div>
+
+
+  <script>
+    let str = " "
+    let count = document.getElementById("button")
+    let textOutput = document.getElementById("textOutput")
+
+    // console.log(str)
+
+    count.addEventListener("click", () =>{
+        let str = textInput = document.getElementById("textInput").value
+        console.log(str)
+    // let re = /[^a-z]/g
+        let newstr = str.replace( /[^A-Za-z0-9]/g, '')
+        // console.log(newstr)
+        const counts = {};
+        for (const s of newstr) {
+          if (counts[s]) {
+            counts[s]++
+          } else {
+            counts[s] = 1
+          } 
+          // let str = newstr
+          // console.log(str)
+        }
+        // return counts;
+        textOutput.innerText = JSON.stringify(counts,null,2)
+      console.log(counts)
+      })
+
+    // const str = "A string - like Hello World!!";
+    // console.log(countChar(str))
+
+  </script>
+
+    </body>
+
 </html>

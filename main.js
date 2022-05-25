@@ -10,18 +10,25 @@ const rl = readline.createInterface({
 let str = "i am a String"
 
 
-const countChar = (str) => {
-  let re = /[^a-z]/g
- let newstr = str.replace( /[^A-Za-z0-9]/g, '')
-  const counts = {};
-  for (const s of newstr) {
-    if (counts[s]) {
-      counts[s]++
-    } else {
-      counts[s] = 1
+
+const countIt = (str) => {
+    // let re = /[^a-z]/g
+    let newstr = str.replace( /[^A-Za-z0-9]/g, '')
+    const counts = {};
+    for (const s of newstr) {
+      if (counts[s]) {
+        counts[s]++
+      } else {
+        counts[s] = 1
+      } 
+      // let str = newstr
+      // console.log(str)
     }
+    return counts;
   }
-  return counts
+
+  console.log('BOOMS', str.length)
+
 }
 
 
