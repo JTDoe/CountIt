@@ -1,11 +1,13 @@
 'use strict';
 
 const assert = require('assert');
+const { elementAttributeModified } = require('jsdom/lib/jsdom/living/named-properties-window');
 const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
+let str = "i am a String"
 
 
 
@@ -26,7 +28,15 @@ const countIt = (str) => {
   }
 
   console.log('BOOMS', str.length)
+
 }
+
+
+
+
+
+const newstr = "The quick brown fox jumps over the lazy dog and the sleeping cat early in the day.";
+console.log(countChar(newstr))
 
 
 const getPrompt = () =>  {
@@ -46,3 +56,4 @@ if (typeof describe === 'function') {
 } else {
   getPrompt();
 }
+
